@@ -6,8 +6,10 @@ export async function GET() {
 
   const stream = new ReadableStream({
     start(controller) {
+      // 500ms毎に文字を1文字ずつ送信
       const intervalId = setInterval(() => {
         if (index >= text.length) {
+          // 文字列の終端に達したらintervalをクリアして、ストリームを閉じる
           clearInterval(intervalId);
           controller.close();
           return;
