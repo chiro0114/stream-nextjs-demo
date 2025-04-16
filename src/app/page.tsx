@@ -15,7 +15,7 @@ export default function Home() {
 
       if (!response.body) return;
 
-      // getReaderを実行詩readerを取得
+      // getReaderを実行してreaderを取得
       const reader = response.body.getReader();
       const decoder = new TextDecoder('utf-8');
 
